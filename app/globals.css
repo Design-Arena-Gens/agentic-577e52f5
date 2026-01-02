@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  @apply bg-gray-950 text-gray-100 font-copy antialiased;
+}
+
+.gradient-border {
+  position: relative;
+  border-radius: 1.5rem;
+  background: linear-gradient(135deg, rgba(242, 95, 92, 0.6), rgba(112, 193, 179, 0.6), rgba(80, 81, 79, 0.6));
+  padding: 1px;
+}
+
+.gradient-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 1.5rem;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(255, 224, 102, 0.4), rgba(36, 123, 160, 0.25));
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  -webkit-mask-composite: xor;
+}
+
+.gradient-border > * {
+  position: relative;
+  border-radius: 1.5rem;
+  background: rgba(16, 24, 32, 0.85);
+  backdrop-filter: blur(16px);
+}
